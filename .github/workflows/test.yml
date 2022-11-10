@@ -35,4 +35,20 @@ jobs:
           ls -la 
           echo tttt
           ls -la build
+          
+      - name: Upload to github actions
+        uses: actions/upload-artifact@v3
+        with:
+          path: build/*.apk
+          if-no-files-found: error
+
+      - name: Clean1
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          retain_days: 1
+          keep_minimum_runs: 3
+
+
+      - name: CleanUP
+        run: |
           rm -rf build
