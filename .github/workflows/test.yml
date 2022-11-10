@@ -32,4 +32,7 @@ jobs:
               exit 1
             fi
           done
+          ls -la 
+          echo tttt
+          ls -la build
           rm -rf build
